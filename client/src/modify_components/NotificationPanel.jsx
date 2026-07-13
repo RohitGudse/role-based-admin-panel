@@ -152,6 +152,7 @@ const NotificationPanel = () => {
       <div className="mt-6 border-t pt-4 text-center">
         <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg transition duration-300">
           View All Notifications
+          client All Notifications
         </button>
       </div>
 
