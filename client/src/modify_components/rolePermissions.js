@@ -1,17 +1,25 @@
+// Admin Permissions
+const adminPermissions = [
+  "dashboard",
+  "users",
+  "settings",
+  "reports",
+];
+
+// Manager Permissions
+const managerPermissions = [
+  "dashboard",
+  "reports",
+];
+
+// User Permissions
+const userPermissions = [
+  "dashboard",
+];
+
+// Export All Role Permissions
 export const rolePermissions = {
-  admin: [
-    "dashboard",
-    "users",
-    "settings",
-    "reports",
-  ],
-
-  manager: [
-    "dashboard",
-    "reports",
-  ],
-
-  user: [
-    "dashboard",
-  ],
+  admin: adminPermissions,
+  manager: managerPermissions,
+  user: userPermissions,
 };
