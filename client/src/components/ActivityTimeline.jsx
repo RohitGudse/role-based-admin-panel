@@ -1,29 +1,31 @@
 import React from "react";
 
-const activities = [
-  "Rohit added a new user",
-  "Admin updated permissions",
-  "User login successful",
-  "Manager generated report",
+const activityList = [
+  { id: 1, text: "Rohit added a new user" },
+  { id: 2, text: "Admin updated permissions" },
+  { id: 3, text: "User login successful" },
+  { id: 4, text: "Manager generated report" },
 ];
 
-const ActivityTimeline = () => {
+function ActivityTimeline() {
   return (
-    <div className="bg-white p-6 rounded-xl shadow">
-      <h2 className="text-xl font-semibold mb-4">Recent Activities</h2>
+    <section className="bg-white p-6 rounded-xl shadow-md">
+      <h2 className="text-xl font-semibold mb-5">
+        Recent Activities
+      </h2>
 
-      <ul className="space-y-4">
-        {activities.map((activity, index) => (
-          <li
-            key={index}
-            className="border-l-4 border-blue-500 pl-4 py-2"
+      <div className="space-y-4">
+        {activityList.map(({ id, text }) => (
+          <div
+            key={id}
+            className="flex items-center border-l-4 border-blue-500 pl-4 py-2"
           >
-            {activity}
-          </li>
+            <p className="text-gray-700">{text}</p>
+          </div>
         ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   );
-};
+}
 
 export default ActivityTimeline;
