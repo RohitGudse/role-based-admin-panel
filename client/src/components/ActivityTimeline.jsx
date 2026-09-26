@@ -1,31 +1,53 @@
 import React from "react";
 
-const activityList = [
-  { id: 1, text: "Rohit added a new user" },
-  { id: 2, text: "Admin updated permissions" },
-  { id: 3, text: "User login successful" },
-  { id: 4, text: "Manager generated report" },
+const activities = [
+  {
+    id: 1,
+    message: "Rohit added a new user",
+  },
+  {
+    id: 2,
+    message: "Admin updated permissions",
+  },
+  {
+    id: 3,
+    message: "User login successful",
+  },
+  {
+    id: 4,
+    message: "Manager generated report",
+  },
 ];
 
-function ActivityTimeline() {
-  return (
-    <section className="bg-white p-6 rounded-xl shadow-md">
-      <h2 className="text-xl font-semibold mb-5">
-        Recent Activities
-      </h2>
+const ActivityItem = ({ message }) => (
+  <div className="flex gap-3 items-center">
+    <span className="w-3 h-3 rounded-full bg-blue-500"></span>
 
-      <div className="space-y-4">
-        {activityList.map(({ id, text }) => (
-          <div
-            key={id}
-            className="flex items-center border-l-4 border-blue-500 pl-4 py-2"
-          >
-            <p className="text-gray-700">{text}</p>
-          </div>
+    <p className="text-gray-700 text-sm">
+      {message}
+    </p>
+  </div>
+);
+
+const ActivityTimeline = () => {
+  return (
+    <section className="rounded-xl bg-white p-6 shadow-md">
+      <header className="mb-6">
+        <h2 className="text-xl font-semibold text-gray-800">
+          Recent Activities
+        </h2>
+      </header>
+
+      <div className="space-y-5">
+        {activities.map((activity) => (
+          <ActivityItem
+            key={activity.id}
+            message={activity.message}
+          />
         ))}
       </div>
     </section>
   );
-}
+};
 
 export default ActivityTimeline;
